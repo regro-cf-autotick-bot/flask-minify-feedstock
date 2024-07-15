@@ -1,5 +1,5 @@
 {% set name = "flask-minify" %}
-{% set version = "0.42" %}
+{% set version = "0.48" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/Flask-Minify-{{ version }}.tar.gz
-  sha256: cdae9bd492b4200ebbf9fd0b08878452274ddca454f3eb1dff8b900629538c8b
+  sha256: 0c2e5d6526e6db02d7a05dcdb16da19c21b0cc82f952b0a91adbfca5e4269098
 
 build:
   number: 0
