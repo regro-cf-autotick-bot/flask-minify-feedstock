@@ -7,24 +7,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/Flask-Minify-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/Flask-Minify-{{ version }}.tar.gz
   sha256: cdae9bd492b4200ebbf9fd0b08878452274ddca454f3eb1dff8b900629538c8b
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - flask
     - htmlmin
     - jsmin
     - lesscpy
-    - python >=3.6
+    - python >={{ python_min }}
     - rcssmin
     - six
     - python-xxhash
@@ -36,6 +36,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/mrf345/flask_minify/
